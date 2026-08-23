@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from google import genai
+from google.genai import types
 
 load_dotenv()
 
@@ -15,14 +16,14 @@ def extract_image_text(path):
         image_bytes = f.read()
 
     response = client.models.generate_content(
-    model="gemini-3.6-flash",
-    contents=[
-        "Extract all text from this image exactly as written. Return only the extracted text.",
-        {
-            "mime_type": mime_type,
-            "data": image_bytes,
-        },
-    ],
-)
+        model="gemini-3.6-flash",
+        contents=[
+            "Extract all text from this image exactly as written. Return only the extracted text.",
+            types.Part.from_bytes(
+                data=image_bytes,
+                mime_type=mime_type,
+            ),
+        ],
+    )
 
     return response.text
