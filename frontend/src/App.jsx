@@ -89,13 +89,17 @@ function App() {
 
    const response = await API.post("/api/analyze", formData);
 
-console.log("API Response:", response.data);
-
 setResult(response.data);
-setShowResults(true);
-  } catch (err) {
-    console.error(err);
-    alert("Analysis failed.");
+setShowWorkspace(false);   // Hide the upload workspace
+setShowResults(true); 
+    } catch (err) {
+  console.error(err);
+
+  alert(
+    err.response?.data?.detail ||
+    err.response?.data?.error ||
+    err.message
+  );
   } finally {
     setProcessing(false);
   }
