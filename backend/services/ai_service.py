@@ -25,11 +25,14 @@ Document:
 {text[:4000]}
 """
 
-    response = client.models.generate_content(
-        model="gemini-3.6-flash",
-        contents=prompt
-    )
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
 
-    cleaned = response.text.replace("```json", "").replace("```", "").strip()
+        cleaned = response.text.replace("```json", "").replace("```", "").strip()
+        return json.loads(cleaned)
 
-    return json.loads(cleaned)
+    except Exception as e:
+        raise Exception(f"Gemini API Error: {str(e)}")
