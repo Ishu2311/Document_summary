@@ -15,14 +15,14 @@ def extract_image_text(path):
         image_bytes = f.read()
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=[
-            "Extract all text from this image exactly as written. Return only the extracted text.",
-            {
-                "mime_type": mime_type,
-                "data": image_bytes,
-            },
-        ],
-    )
+    model="gemini-3.6-flash",
+    contents=[
+        "Extract all text from this image exactly as written. Return only the extracted text.",
+        {
+            "mime_type": mime_type,
+            "data": image_bytes,
+        },
+    ],
+)
 
     return response.text

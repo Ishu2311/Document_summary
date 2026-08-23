@@ -27,9 +27,9 @@ Document:
 
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
-        )
+    model="gemini-3.6-flash",
+    contents=prompt
+)
 
         cleaned = response.text.replace("```json", "").replace("```", "").strip()
         return json.loads(cleaned)
