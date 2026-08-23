@@ -13,7 +13,7 @@ Analyze this document.
 
 Summary Length: {length}
 
-Return ONLY valid JSON in this format:
+Return ONLY valid JSON:
 
 {{
   "summary": "...",

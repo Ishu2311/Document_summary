@@ -1,13 +1,24 @@
-from PIL import Image
-import pytesseract
 import os
+from dotenv import load_dotenv
+from google import genai
 
-# Windows Tesseract installation path
-TESSERACT_PATH = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+load_dotenv()
 
-if os.path.exists(TESSERACT_PATH):
-    pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def extract_image_text(path):
-    image = Image.open(path)
-    return pytesseract.image_to_string(image)
+    with open(path, "rb") as f:
+        image_bytes = f.read()
+
+    response = client.models.generate_content(
+        model="gemini-3.6-flash",
+        contents=[
+            "Extract all text from this image exactly as written. Return only the extracted text.",
+            {
+                "mime_type": "image/jpeg",
+                "data": image_bytes,
+            },
+        ],
+    )
+
+    return response.text
