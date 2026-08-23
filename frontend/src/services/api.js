@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: "https://document-summary-3.onrender.com",
 });
 
 export default API;
