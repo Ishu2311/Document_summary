@@ -87,11 +87,12 @@ function App() {
 
     setLoadingText("Generating AI summary...");
 
-    const response = await API.post("/api/analyze", formData);
+   const response = await API.post("/api/analyze", formData);
 
-    setResult(response.data);
-    setShowResults(true);
+console.log("API Response:", response.data);
 
+setResult(response.data);
+setShowResults(true);
   } catch (err) {
     console.error(err);
     alert("Analysis failed.");

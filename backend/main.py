@@ -50,9 +50,5 @@ async def analyze(file: UploadFile = File(...)):
         }
 
     except Exception as e:
-        return {
-            "success": False,
-            "error": repr(e),
-            "filename": file.filename,
-            "text_preview": text[:300]
-        }
+        print("AI ERROR:", e)
+        raise

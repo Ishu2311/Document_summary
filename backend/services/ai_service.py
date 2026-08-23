@@ -1,7 +1,7 @@
 import os
 import json
-from google import genai
 from dotenv import load_dotenv
+from google import genai
 
 load_dotenv()
 
@@ -23,7 +23,6 @@ Return ONLY valid JSON in this format:
 
 Document:
 {text[:4000]}
-
 """
 
     response = client.models.generate_content(
