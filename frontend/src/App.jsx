@@ -76,7 +76,7 @@ function App() {
   };
 
   const generateSummary = async () => {
-  if (!file) return;
+    if (!file || processing) return;
 
   setProcessing(true);
   setLoadingText("Extracting text...");
