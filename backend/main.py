@@ -13,7 +13,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://document-summary-frontend-sl1q.onrender.com",
+        "https://doculens-ai-frontend.onrender.com",
         "https://documentsummary-iw6tky6kk-ishu25.vercel.app"
     ],
     allow_credentials=True,
