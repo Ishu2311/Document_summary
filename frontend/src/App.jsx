@@ -83,7 +83,8 @@ function App() {
 
   try {
     const formData = new FormData();
-    formData.append("file", file);
+formData.append("file", file);
+formData.append("length", summaryLength);
 
     setLoadingText("Generating AI summary...");
 
@@ -421,7 +422,7 @@ function ResultsView({ file, result, onNewAnalysis }) {
 
         <div className="stat-card">
           <div className="stat-icon blue"><Sparkles size={18}/></div>
-          <div><span>AI</span><strong>Gemini</strong></div>
+          <div><span>AI</span><strong>Groq AI</strong></div>
         </div>
 
         <div className="stat-card">
@@ -533,7 +534,7 @@ function ResultsView({ file, result, onNewAnalysis }) {
               <strong>Successfully analyzed</strong>
 
               <span>
-                Your document has been processed using OCR and Gemini AI.
+                Your document has been processed using OCR and Groq AI.
               </span>
             </div>
 
