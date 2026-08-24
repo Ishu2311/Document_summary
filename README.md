@@ -159,25 +159,28 @@ GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ## 📷 Screenshots
 
 ### 🏠 Landing Page
-<img width="1920" height="926" alt="frontend 1" src="https://github.com/user-attachments/assets/3040fe2f-6af9-48b8-9e4b-74440d3d591a" />
-<img width="1916" height="919" alt="frontend-2" src="https://github.com/user-attachments/assets/49e63c3c-1a50-4edc-b3ab-eea1da60c4c3" />
 
+![Landing Page](screenshorts/frontend.JPG)
 
+![Landing Page 2](screenshorts/frontend-2.JPG)
 
 ### 📤 Upload Workspace
 
-<img width="1920" height="925" alt="image" src="https://github.com/user-attachments/assets/4977b497-6fdf-4609-bee6-1fce4eeb6794" />
-
+![Upload Workspace](screenshorts/file_uploading.JPG)
 
 ### 🤖 AI Results Dashboard
 
-<img width="1919" height="921" alt="image" src="https://github.com/user-attachments/assets/8aca72f8-1fd4-4627-846f-8a7261653100" />
-<img width="1919" height="921" alt="image" src="https://github.com/user-attachments/assets/a6631632-f377-4c67-9ba5-a4656a6928e2" />
+#### Document Summary
 
-<img width="1919" height="923" alt="image" src="https://github.com/user-attachments/assets/d11d9f96-17d7-424e-8005-e6d90ae1216d" />
+![Document Summary](screenshorts/output.JPG)
 
+#### Key Points
 
----
+![Key Points](screenshorts/output-2.JPG)
+
+#### Improvement Suggestions
+
+![Suggestions](screenshorts/output-3.JPG)
 
 ## 📡 API Endpoint
 
